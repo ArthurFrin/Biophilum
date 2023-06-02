@@ -5,7 +5,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -56,22 +56,120 @@ footer, header, hgroup, menu, nav, section {
 body {
     font-size: 20px;
     font-family: 'Inter', sans-serif;
+    line-height: 31px;
 }
 [hidden] {
   display: none;
 }
 
-/*css*/
+/*css templates*/
+.flex {
+  display: flex;
+}
+
+.link {
+  color: #008037;
+  font-style: italic;
+}
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* header */
 .banner {
+    display: flex;
     background-image: url("../img/loire-floue.png");
-    width: 100vw;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
+.bar {
+  display: flex;
+  background-color: #1D1D1D ;
+  color: white;
+  justify-content: space-around;
+  padding: 25px 0;
+}
 .nav {
-    display: flex;
-    background-color: #1D1D1D ;
-    color: white;
-    justify-content: space-around;
-    padding: 30px 0;
+  position: sticky;
+  top: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+/* qui-suis-je ? */
+
+.qui-suis-je {
+  display: flex;
+}
+
+.qui-suis-je .left{
+  margin: 49px 0 32px;
+
+}
+.qui-suis-je .h2 {
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.qui-suis-je .name{
+  font-size: 27px;
+  font-weight: 700;
+  margin-right: 18px;
+}
+
+.qui-suis-je .inge {
+  margin-top: 7px;
+}
+
+.qui-suis-je .cv {
+  margin-top: 9px;
+  padding-left: 25px;
+  font-size: 18px;
+}
+
+.qui-suis-je .div-cv{
+  margin: 32px 0 21px;
+}
+
+.qui-suis-je .conseil {
+  margin-top: 7px;
+  width: 90%;
+}
+
+.qui-suis-je .plaquette {
+  margin: 18px 0 30px;
+
+}
+
+.qui-suis-je .xp {
+  margin-bottom: 22px;
+  width: 90%;
+}
+
+.qui-suis-je .domaine {
+  margin-bottom: 11px;
+}
+
+
+
+/* breakpoints */
+
+@media screen and (max-width: 1632px) {
+  .bar {
+    font-size: 16px;
+  }
+
+}
+
+.plante1 {
+  width: 50%;
 }
