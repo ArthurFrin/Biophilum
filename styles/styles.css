@@ -1,0 +1,77 @@
+/* Reset CSS */
+
+/* Remise à zéro des marges, des rembourrages et des bordures */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+
+/* Remise à zéro des styles spécifiques aux listes */
+ol, ul {
+  list-style: none;
+}
+
+/* Remise à zéro des styles spécifiques aux liens */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remise à zéro des styles spécifiques aux tableaux */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remise à zéro des styles spécifiques aux formulaires */
+button, input, select, textarea {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* Remise à zéro des styles spécifiques aux éléments sémantiques HTML5 */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Remise à zéro des styles spécifiques aux éléments "hidden" HTML5 */
+
+body {
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+}
+[hidden] {
+  display: none;
+}
+
+/*css*/
+.banner {
+    background-image: url("../img/loire-floue.png");
+    width: 100vw;
+    background-repeat: no-repeat;
+}
+
+.nav {
+    display: flex;
+    background-color: #1D1D1D ;
+    color: white;
+    justify-content: space-around;
+    padding: 30px 0;
+}
