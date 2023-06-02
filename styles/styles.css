@@ -94,7 +94,7 @@ body {
   background-color: #1D1D1D ;
   color: white;
   justify-content: space-around;
-  padding: 25px 0;
+  padding: px 0;
 }
 .nav {
   position: sticky;
@@ -109,10 +109,13 @@ body {
 
 .qui-suis-je {
   display: flex;
+  margin: 0 5%;
+  justify-content: space-between;
 }
 
 .qui-suis-je .left{
   margin: 49px 0 32px;
+  max-width: 680px;
 
 }
 .qui-suis-je .h2 {
@@ -142,21 +145,39 @@ body {
 
 .qui-suis-je .conseil {
   margin-top: 7px;
-  width: 90%;
 }
 
 .qui-suis-je .plaquette {
   margin: 18px 0 30px;
-
 }
 
 .qui-suis-je .xp {
   margin-bottom: 22px;
-  width: 90%;
 }
 
 .qui-suis-je .domaine {
   margin-bottom: 11px;
+}
+
+.qui-suis-je .li {
+  margin-top: 11px;
+}
+
+.qui-suis-je .adapte {
+  margin: 11px 0 22px;
+}
+
+.qui-suis-je .right {
+  height: 100%;
+}
+.plante1 {
+  width: 652px;
+  height: 912px;
+}
+/* bassin */
+.bassin {
+  background-color: #008037;
+  color: white;
 }
 
 
@@ -170,6 +191,4 @@ body {
 
 }
 
-.plante1 {
-  width: 50%;
-}
+
