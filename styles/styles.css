@@ -94,7 +94,7 @@ body {
   background-color: #1D1D1D ;
   color: white;
   justify-content: space-around;
-  padding: px 0;
+  padding: 10px 0;
 }
 .nav {
   position: sticky;
