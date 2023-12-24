@@ -1,12 +1,14 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
+
 <template>
-  <section class="section1">
+  <section class="section1" id="who-i-am">
     <div class="left">
       <h2 class="title">Qui suis-je ?</h2>
       <div class="flex div-cv">
         <div class="name">Philippe Frin</div>
-        <div class="inge">Ingénieur Écologue</div>
-        <div class="cv link">détail du curriculum vitae</div>
+        <div class="inge">Ingénieur Écologues <a class="cv-link">(CV)</a></div>
       </div>
       <div class="conseil">
         <strong>Biophilum</strong> est une structure de conseils, d’études et de formations en
@@ -22,16 +24,16 @@
       <div class="domaine">Domaines d’activités :  milieux naturels – eau – faune -flore</div>
       <ul>
         <li class="li">
-          -Diagnostics de territoire (inventaires zones humides, pré-diagnostic, cartographie des
+          Diagnostics de territoire (inventaires zones humides, pré-diagnostic, cartographie des
           habitats …).
         </li>
         <li class="li">
-          -Études techniques et élaboration de projets (plans de gestion, aménagement des bassins
+          Études techniques et élaboration de projets (plans de gestion, aménagement des bassins
           versants, …).
         </li>
-        <li class="li">-Assistance technique (DCE, projets, chantiers).</li>
+        <li class="li">Assistance technique (DCE, projets, chantiers).</li>
         <li class="li">
-          -Formations « milieux naturels » (zones humides, espèces envahissantes, milieux
+          Formations « milieux naturels » (zones humides, espèces envahissantes, milieux
           aquatiques, …).
         </li>
       </ul>
@@ -51,8 +53,10 @@
 <style lang="scss" scoped>
 .section1 {
   display: flex;
-  margin: 0 5%;
+  padding: 0 5%;
   justify-content: space-between;
+  background-color: #fff;
+  width: 100%;
 
   .left {
     margin: 49px 0 32px;
@@ -67,6 +71,9 @@
 
   .inge {
     margin-top: 7px;
+  }
+  .cv-link {
+    color: green;
   }
 
   .cv {

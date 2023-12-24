@@ -2,6 +2,8 @@
 import HeaderTitle from './components/Header.vue'
 import NavBar from './components/NavBar.vue'
 import WhoIAm from './components/WhoIAm.vue';
+import FloraAndFauna from './components/FloraAndFauna.vue';
+import WeatArea from './components/WeatArea.vue';
 </script>
 
 <template>
@@ -11,6 +13,8 @@ import WhoIAm from './components/WhoIAm.vue';
   <NavBar />
   <main>
     <WhoIAm />
+    <FloraAndFauna />
+    <WeatArea />
   </main>
 
   
