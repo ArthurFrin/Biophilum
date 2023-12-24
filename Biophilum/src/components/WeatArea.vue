@@ -58,10 +58,12 @@ section {
   display: flex;
   background-color: #fff;
   width: 100%;
-  padding: 85px 0 85px 5%;
+  padding-left: 5%;
 
   .left {
-
+    margin-top: 80px;
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -74,6 +76,7 @@ section {
     }
   }
   .right {
+    margin-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;

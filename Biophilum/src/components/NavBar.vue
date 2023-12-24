@@ -1,17 +1,22 @@
 <script setup lang="ts">
 import { onMounted, onBeforeUnmount, ref, type Ref } from 'vue';
 
-const sectionActuelle:Ref<string | null> = ref('who-i-am');
+const currentSection: Ref<string | null> = ref('who-i-am');
+const canDetect = ref(true);
 
-const getSectionActuelle = () => {
-  const seuilDeDebut = 50;
-  const sections = ['who-i-am', 'flora-fauna', 'weat-area', 'watershed', 'catering-management', 'contact' ];
+const getCurrentSection = (): string | null => {
+  if (canDetect.value === false) {
+    return null;
+  }
+
+  const threshold = 50;
+  const sections = ['who-i-am', 'flora-fauna', 'weat-area', 'watershed', 'catering-management', 'contact'];
 
   for (const section of sections) {
     const element = document.getElementById(section);
     if (element) {
       const rect = element.getBoundingClientRect();
-      if (rect.top >= -seuilDeDebut && rect.bottom <= window.innerHeight + seuilDeDebut) {
+      if (rect.top >= -threshold && rect.bottom <= window.innerHeight + threshold) {
         return section;
       }
     }
@@ -20,36 +25,51 @@ const getSectionActuelle = () => {
   return null;
 };
 
-const detecterSectionActuelle = () => {
-  const nouvelleSection = getSectionActuelle();
-  if (!nouvelleSection) {
+const detectCurrentSection = () => {
+  const newSection = getCurrentSection();
+  if (!newSection) {
     return;
   }
-  if (nouvelleSection !== sectionActuelle.value!) {
-    sectionActuelle.value = nouvelleSection;
+  if (newSection !== currentSection.value) {
+    currentSection.value = newSection;
   }
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', detecterSectionActuelle);
-  console.log(sectionActuelle.value);
+  window.addEventListener('scroll', detectCurrentSection);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener('scroll', detecterSectionActuelle);
-  console.log(sectionActuelle.value);
+  window.removeEventListener('scroll', detectCurrentSection);
 });
 
-const navigateTo = (section: string) => {
-  const element = document.getElementById(section);
-  if (element) {
-    const topOffset = 40;
+const scrollTo = (element: HTMLElement, topOffset: number) => {
+  return new Promise<void>((resolve) => {
     const elementTop = element.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
       top: elementTop - topOffset,
       behavior: 'smooth'
     });
-    sectionActuelle.value = section;
+
+    const scrollHandler = () => {
+      window.removeEventListener('scroll', scrollHandler);
+      resolve();
+    };
+
+    window.addEventListener('scroll', scrollHandler);
+  });
+};
+
+const navigateTo = async (section: string) => {
+  canDetect.value = false;
+  currentSection.value = section;
+
+  const targetElement = document.getElementById(section);
+  if (targetElement) {
+    const topOffset = 40;
+    await scrollTo(targetElement, topOffset);
+
+    canDetect.value = true;
   }
 };
 </script>
@@ -57,12 +77,12 @@ const navigateTo = (section: string) => {
 <template>
   <nav class="nav">
     <ul class="bar">
-      <li :class="{ active: sectionActuelle === 'who-i-am' }"><button @click="navigateTo('who-i-am')" >Qui suis-je?</button></li>
-      <li :class="{ active: sectionActuelle === 'flora-fauna' }"><button @click="navigateTo('flora-fauna')">Faune-flore-habitats</button></li>
-      <li :class="{ active: sectionActuelle === 'weat-area' }"><button @click="navigateTo('weat-area')">Zones humides</button></li>
-      <li :class="{ active: sectionActuelle === 'watershed' }"><button @click="navigateTo('watershed')">Bassin-versant</button></li>
-      <li :class="{ active: sectionActuelle === 'catering-management' }"><button @click="navigateTo('catering-management')">Gestion-restauration</button></li>
-      <li :class="{ active: sectionActuelle === 'contact' }"><button @click="navigateTo('contact')">Contact {{ sectionActuelle }}</button></li>
+      <li :class="{ active: currentSection === 'who-i-am' }"><button @click="navigateTo('who-i-am')" >Qui suis-je?</button></li>
+      <li :class="{ active: currentSection === 'flora-fauna' }"><button @click="navigateTo('flora-fauna')">Faune-flore-habitats</button></li>
+      <li :class="{ active: currentSection === 'weat-area' }"><button @click="navigateTo('weat-area')">Zones humides</button></li>
+      <li :class="{ active: currentSection === 'watershed' }"><button @click="navigateTo('watershed')">Bassin-versant</button></li>
+      <li :class="{ active: currentSection === 'catering-management' }"><button @click="navigateTo('catering-management')">Gestion-restauration</button></li>
+      <li :class="{ active: currentSection === 'contact' }"><button @click="navigateTo('contact')">Contact {{ currentSection }}</button></li>
     </ul>
   </nav>
 </template>
@@ -71,6 +91,7 @@ const navigateTo = (section: string) => {
 .nav {
   position: sticky;
   top: 0;
+  z-index: 100;
 
   .bar {
     display: flex;

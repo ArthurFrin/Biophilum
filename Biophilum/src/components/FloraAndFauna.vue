@@ -41,7 +41,7 @@
 <style lang="scss" scoped>
 .flora-fauna {
   display: flex;
-  padding: 40px 5% 0 0;
+  padding: 40px 5% 40px 0;
   justify-content: space-around;
   background-color: #008037;
   color: #fff;
