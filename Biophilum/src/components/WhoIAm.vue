@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import cvDownloadLink from '../assets/cv-frin-philippe.pdf';
 
 </script>
 
@@ -8,7 +9,9 @@
       <h2 class="title">Qui suis-je ?</h2>
       <div class="flex div-cv">
         <div class="name">Philippe Frin</div>
-        <div class="inge">Ingénieur Écologues <a class="cv-link">(CV)</a></div>
+        <div class="inge">Ingénieur Écologues 
+          <a :href="cvDownloadLink" download="cv_frin_philippe.pdf" class="cv-link" >(voir CV)</a>
+        </div>
       </div>
       <div class="conseil">
         <strong>Biophilum</strong> est une structure de conseils, d’études et de formations en
