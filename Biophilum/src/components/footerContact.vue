@@ -1,5 +1,6 @@
 <script setup lang="ts">
-    
+import cvDownloadLink from '../assets/cv-frin-philippe.pdf';
+
 </script>
 
 <template>
@@ -10,6 +11,7 @@
                 <a href="tel+0602148950">téléphone : <strong>06 02 14 89 50</strong></a>
                 <a href="mailto:biophilum@orange.fr">mail : <strong>biophilum@orange.fr</strong></a>
                 <a href="mailto:frin_philippe@orange.fr">ou : <strong>frin_philippe@orange.fr</strong></a>
+                <a :href="cvDownloadLink" download="cv_frin_philippe.pdf" >CV</a>
             </nav>
             <div>Adresse postale : 124 rue de Belphaget 44150 Saint Géréon</div>
         </div>
@@ -45,7 +47,7 @@
         }
 
         .left {
-            margin: 40px 0;
+            margin: 40px 0 20px;
         }
 
         .right {
