@@ -33,9 +33,6 @@
         d’évaluation de ces fonctions à différentes échelles : parcelle, sous-bassin- versant,
         bassin-versant, masse d’eau.
       </p>
-      <div>
-        Biophilum est à votre disposition <span class="green">pour répondre à vos besoins et vos questions.</span>
-      </div>
     </div>
     <div class="right">
       <div class="round-pictures">
@@ -98,6 +95,7 @@ section {
         margin-top: 100px;
         margin-left: -50px;
         width: 630px;
+        margin-bottom: 80px;
     }
   }
 }

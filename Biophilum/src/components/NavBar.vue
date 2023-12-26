@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref, type Ref } from 'vue';
+import { ref, type Ref } from 'vue';
 
 const currentSection: Ref<string | null> = ref('who-i-am');
 const canDetect = ref(true);
@@ -34,14 +34,7 @@ const detectCurrentSection = () => {
     currentSection.value = newSection;
   }
 };
-
-onMounted(() => {
-  window.addEventListener('scroll', detectCurrentSection);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', detectCurrentSection);
-});
+window.addEventListener('scroll', detectCurrentSection);
 
 const scrollTo = (element: HTMLElement, topOffset: number) => {
   return new Promise<void>((resolve) => {

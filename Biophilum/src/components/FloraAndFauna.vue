@@ -2,7 +2,7 @@
 <template>
   <section class="flora-fauna" id="flora-fauna">
     <div class="left">
-      <img class="lezard" src="" alt="" />
+      <img class="bird" src="../assets/img/bird.png" alt="" />
     </div>
     <div class="right">
       <h2 class="title">Expertise « faune, flore, habitats</h2>
@@ -32,7 +32,7 @@
       </ul>
       <div class="div3">
         Ces expertises se font en partenariat avec d’autres experts en fonction des compétences
-        requises. Biophilum est à votre disposition pour répondre à vos besoins et vos questions.
+        requises. <br> Biophilum est à votre disposition pour répondre à vos besoins et vos questions.
       </div>
     </div>
   </section>
@@ -48,19 +48,19 @@
 
   .left {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     width: 50%;
+    justify-content: center;
+    margin-bottom: 150px;
 
-    .lezard {
-      width: 800px;
-      margin-right: 25px;
-      position: relative;
-      right: 100px;
+    .bird {
+      margin-top:40px;
+      width: 500px;
     }
   }
 
   .right {
-    max-width: 770px;
+    width: 50%;
     .div1 {
       margin: 25px 0;
     }
