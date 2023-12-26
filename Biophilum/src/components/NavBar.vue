@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref, type Ref } from 'vue';
+import { ref, type Ref } from 'vue';
 
 const currentSection: Ref<string | null> = ref('who-i-am');
 const canDetect = ref(true);
@@ -10,13 +10,22 @@ const getCurrentSection = (): string | null => {
   }
 
   const threshold = 50;
+  const offset = 100;
   const sections = ['who-i-am', 'flora-fauna', 'weat-area', 'watershed', 'catering-management', 'contact'];
+  const isAtBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - threshold;
+
+  if (isAtBottom) {
+    return 'contact';
+  }
 
   for (const section of sections) {
     const element = document.getElementById(section);
     if (element) {
       const rect = element.getBoundingClientRect();
-      if (rect.top >= -threshold && rect.bottom <= window.innerHeight + threshold) {
+      const isSectionVisible =
+        rect.top <= threshold + offset && rect.bottom >= -threshold + offset;
+
+      if (isSectionVisible) {
         return section;
       }
     }
@@ -24,6 +33,8 @@ const getCurrentSection = (): string | null => {
 
   return null;
 };
+
+
 
 const detectCurrentSection = () => {
   const newSection = getCurrentSection();
@@ -34,14 +45,7 @@ const detectCurrentSection = () => {
     currentSection.value = newSection;
   }
 };
-
-onMounted(() => {
-  window.addEventListener('scroll', detectCurrentSection);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', detectCurrentSection);
-});
+window.addEventListener('scroll', detectCurrentSection);
 
 const scrollTo = (element: HTMLElement, topOffset: number) => {
   return new Promise<void>((resolve) => {
@@ -82,7 +86,7 @@ const navigateTo = async (section: string) => {
       <li :class="{ active: currentSection === 'weat-area' }"><button @click="navigateTo('weat-area')">Zones humides</button></li>
       <li :class="{ active: currentSection === 'watershed' }"><button @click="navigateTo('watershed')">Bassin-versant</button></li>
       <li :class="{ active: currentSection === 'catering-management' }"><button @click="navigateTo('catering-management')">Gestion-restauration</button></li>
-      <li :class="{ active: currentSection === 'contact' }"><button @click="navigateTo('contact')">Contact {{ currentSection }}</button></li>
+      <li :class="{ active: currentSection === 'contact' }"><button @click="navigateTo('contact')">Contact</button></li>
     </ul>
   </nav>
 </template>
