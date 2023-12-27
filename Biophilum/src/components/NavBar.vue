@@ -1,92 +1,139 @@
 <script setup lang="ts">
-import { ref, type Ref } from 'vue';
+import { ref, type Ref } from 'vue'
+import IconBurger from './icons/IconBurger.vue'
 
-const currentSection: Ref<string | null> = ref('who-i-am');
-const canDetect = ref(true);
+const currentSection: Ref<string | null> = ref('who-i-am')
+const canDetect = ref(true)
+let showBurger = ref(false)
+
+const toggleBurger = () => {
+  showBurger.value = !showBurger.value
+}
 
 const getCurrentSection = (): string | null => {
   if (canDetect.value === false) {
-    return null;
+    return null
   }
 
-  const threshold = 50;
-  const offset = 100;
-  const sections = ['who-i-am', 'flora-fauna', 'weat-area', 'watershed', 'catering-management', 'contact'];
-  const isAtBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - threshold;
+  const threshold = 50
+  const offset = 100
+  const sections = [
+    'who-i-am',
+    'flora-fauna',
+    'weat-area',
+    'watershed',
+    'catering-management',
+    'contact'
+  ]
+  const isAtBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - threshold
 
   if (isAtBottom) {
-    return 'contact';
+    return 'contact'
   }
 
   for (const section of sections) {
-    const element = document.getElementById(section);
+    const element = document.getElementById(section)
     if (element) {
-      const rect = element.getBoundingClientRect();
-      const isSectionVisible =
-        rect.top <= threshold + offset && rect.bottom >= -threshold + offset;
+      const rect = element.getBoundingClientRect()
+      const isSectionVisible = rect.top <= threshold + offset && rect.bottom >= -threshold + offset
 
       if (isSectionVisible) {
-        return section;
+        return section
       }
     }
   }
 
-  return null;
-};
-
-
+  return null
+}
 
 const detectCurrentSection = () => {
-  const newSection = getCurrentSection();
+  const newSection = getCurrentSection()
   if (!newSection) {
-    return;
+    return
   }
   if (newSection !== currentSection.value) {
-    currentSection.value = newSection;
+    currentSection.value = newSection
   }
-};
-window.addEventListener('scroll', detectCurrentSection);
+}
+window.addEventListener('scroll', detectCurrentSection)
 
 const scrollTo = (element: HTMLElement, topOffset: number) => {
   return new Promise<void>((resolve) => {
-    const elementTop = element.getBoundingClientRect().top + window.scrollY;
+    const elementTop = element.getBoundingClientRect().top + window.scrollY
     window.scrollTo({
       top: elementTop - topOffset,
       behavior: 'smooth'
-    });
+    })
 
     const scrollHandler = () => {
-      window.removeEventListener('scroll', scrollHandler);
-      resolve();
-    };
+      window.removeEventListener('scroll', scrollHandler)
+      resolve()
+    }
 
-    window.addEventListener('scroll', scrollHandler);
-  });
-};
+    window.addEventListener('scroll', scrollHandler)
+  })
+}
 
 const navigateTo = async (section: string) => {
-  canDetect.value = false;
-  currentSection.value = section;
+  canDetect.value = false
+  currentSection.value = section
 
-  const targetElement = document.getElementById(section);
+  const targetElement = document.getElementById(section)
   if (targetElement) {
-    const topOffset = 40;
-    await scrollTo(targetElement, topOffset);
+    const topOffset = 40
+    await scrollTo(targetElement, topOffset)
 
-    canDetect.value = true;
+    canDetect.value = true
   }
-};
+}
 </script>
 
 <template>
   <nav class="nav">
     <ul class="bar">
-      <li :class="{ active: currentSection === 'who-i-am' }"><button @click="navigateTo('who-i-am')" >Qui suis-je?</button></li>
-      <li :class="{ active: currentSection === 'flora-fauna' }"><button @click="navigateTo('flora-fauna')">Faune-flore-habitats</button></li>
-      <li :class="{ active: currentSection === 'weat-area' }"><button @click="navigateTo('weat-area')">Zones humides</button></li>
-      <li :class="{ active: currentSection === 'watershed' }"><button @click="navigateTo('watershed')">Bassin-versant</button></li>
-      <li :class="{ active: currentSection === 'catering-management' }"><button @click="navigateTo('catering-management')">Gestion-restauration</button></li>
-      <li :class="{ active: currentSection === 'contact' }"><button @click="navigateTo('contact')">Contact</button></li>
+      <li :class="{ active: currentSection === 'who-i-am' }">
+        <button @click="navigateTo('who-i-am')">Qui suis-je?</button>
+      </li>
+      <li :class="{ active: currentSection === 'flora-fauna' }">
+        <button @click="navigateTo('flora-fauna')">Faune-flore-habitats</button>
+      </li>
+      <li :class="{ active: currentSection === 'weat-area' }">
+        <button @click="navigateTo('weat-area')">Zones humides</button>
+      </li>
+      <li :class="{ active: currentSection === 'watershed' }">
+        <button @click="navigateTo('watershed')">Bassin-versant</button>
+      </li>
+      <li :class="{ active: currentSection === 'catering-management' }">
+        <button @click="navigateTo('catering-management')">Gestion-restauration</button>
+      </li>
+      <li :class="{ active: currentSection === 'contact' }">
+        <button @click="navigateTo('contact')">Contact</button>
+      </li>
+    </ul>
+  </nav>
+  <nav :class="{ toogle: showBurger === true }" class="mobile">
+    <button @click="toggleBurger()" class="burger">
+      <IconBurger class="icon" />
+    </button>
+    <ul v-if="showBurger" class="bar2">
+      <li>
+        <button @click="navigateTo('who-i-am')">Qui suis-je?</button>
+      </li>
+      <li>
+        <button @click="navigateTo('flora-fauna')">Faune-flore-habitats</button>
+      </li>
+      <li>
+        <button @click="navigateTo('weat-area')">Zones humides</button>
+      </li>
+      <li>
+        <button @click="navigateTo('watershed')">Bassin-versant</button>
+      </li>
+      <li>
+        <button @click="navigateTo('catering-management')">Gestion-restauration</button>
+      </li>
+      <li>
+        <button @click="navigateTo('contact')">Contact</button>
+      </li>
     </ul>
   </nav>
 </template>
@@ -144,9 +191,60 @@ const navigateTo = async (section: string) => {
       border: none;
       font-size: 18px;
       cursor: pointer;
+    }
+  }
+}
 
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+
+  .toogle {
+    background-color: #1d1d1ded;
+    color: #fff;
+    fill: #fff;
+    padding-bottom: 5px;
+    padding-right: 5px;
+    border-bottom-right-radius: 20px;
+  }
+  .nav {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    position: fixed;
+    top: 0;
+    padding-top: 5px;
+    z-index: 100;
+
+    .bar2 {
+      padding: 0;
+      li {
+        list-style: none; // Supprimer les puces de la liste
+
+        button {
+          text-decoration: none; // Supprimer le soulignement par défaut des liens
+          color: currentColor;
+          background-color: transparent;
+          border: none;
+          font-size: 18px;
+          cursor: pointer;
+        }
+      }
+    }
+    .burger {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background-color: transparent;
+      .icon {
+        width: 40px;
+        height: 40px;
+      }
     }
   }
 }
 </style>
-

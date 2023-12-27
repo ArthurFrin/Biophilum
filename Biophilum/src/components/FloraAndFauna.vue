@@ -1,10 +1,10 @@
 <script setup lang="ts"></script>
 <template>
   <section class="flora-fauna" id="flora-fauna">
-    <div class="left">
-      <img class="bird" src="../assets/img/bird.png" alt="" />
+    <div class="left desk">
+      <img class="bird desk" src="../assets/img/bird.png" alt="" />
     </div>
-    <div class="right">
+    <div class="right mobile">
       <h2 class="title">Expertise « faune, flore, habitats</h2>
       <div class="div1">
         Biophilum vous propose une expertise « faune, flore, milieux » de qualité permettant
@@ -74,6 +74,17 @@
     .div3 {
       margin: 25px 0 0;
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .desk {
+    display: none !important;
+  }
+
+  .mobile {
+    width: 100% !important;
+    padding-left: 5%;
   }
 }
 </style>

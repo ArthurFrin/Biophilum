@@ -48,8 +48,8 @@ import cvDownloadLink from '../assets/cv-frin-philippe.pdf';
         compétences, l’analyse et les expériences.
       </div>
     </div>
-    <div class="right">
-      <img class="plante1" src="../assets/img/plante1.png" alt="" />
+    <div class="right desk">
+      <img class="plante1 desk" src="../assets/img/plante1.png" alt="" />
     </div>
   </section>
 </template>
@@ -120,6 +120,13 @@ import cvDownloadLink from '../assets/cv-frin-philippe.pdf';
   .plante1 {
     width: 652px;
     height: 912px;
+  }
+  
+}
+
+@media screen and (max-width: 1200px) {
+  .desk {
+    display: none !important;
   }
 }
 </style>
