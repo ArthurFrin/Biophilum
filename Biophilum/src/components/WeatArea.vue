@@ -2,7 +2,7 @@
 
 <template>
   <section id="weat-area">
-    <div class="left">
+    <div class="left mobile">
       <h3 class="title">Expertise zones humides</h3>
       <p>
         L’identification des zones humides est réalisée sur la base des critères floristiques
@@ -34,8 +34,8 @@
         bassin-versant, masse d’eau.
       </p>
     </div>
-    <div class="right">
-      <div class="round-pictures">
+    <div class="right desk">
+      <div class="round-pictures desk">
         <img src="../assets/img/img1.png" alt="" />
         <img src="../assets/img/img2.png" alt="" />
         <img src="../assets/img/img3.png" alt="" />
@@ -98,5 +98,17 @@ section {
         margin-bottom: 80px;
     }
   }
+
+  @media screen and (max-width: 1200px) {
+  .desk {
+    display: none !important;
+  }
+  .mobile {
+    width: 100% !important;
+    padding-right: 5%;
+  }
+
+
+}
 }
 </style>

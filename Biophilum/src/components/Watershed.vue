@@ -2,10 +2,10 @@
 </script>
 <template>
   <section class="watershed" id="watershed">
-    <div class="left">
-        <img src="../assets/img/group1.png" draggable="false" alt="">
+    <div class="left desk">
+        <img class="desk" src="../assets/img/group1.png" draggable="false" alt="">
     </div>
-    <div class="right">
+    <div class="right mobile">
       <h3 class="title">Expertise « bassin versant »</h3>
       <p class="p">
         L’analyse de la structure d’un territoire, à l’échelle d’un bassin versant ou d’une
@@ -88,6 +88,16 @@
 
   .p {
     margin: 15px 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .desk {
+    display: none !important;
+  }
+  .mobile {
+    width: 100% !important;
+    padding-left: 5%;
   }
 }
 </style>

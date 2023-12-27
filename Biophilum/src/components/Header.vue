@@ -18,4 +18,9 @@
     object-fit: cover;
   }
 }
+@media screen and (max-width: 1200px) {
+  .header {
+    height: auto;
+  }
+}
 </style>

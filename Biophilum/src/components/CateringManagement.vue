@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="catering-management" id="catering-management">
-    <div class="left">
+  <section class="catering-management mobile" id="catering-management">
+    <div class="left mobile">
       <h3 class="title">Gestion, restauration, renaturation</h3>
       <p class="p">
         <strong>Biophilum</strong> vous <strong>accompagne</strong> dans vos
@@ -32,8 +32,8 @@
         <strong>Biophilum vous accompagne dans la communication de vos projets</strong> pour une meilleure compréhension et adhésion des acteurs du territoire et des riverains (réalisation de panneaux de sensibilisation, animation de réunions de sensibilisation, …).
       </p>
     </div>
-    <div class="right">
-      <img src="../assets/img/Group2.png" alt="" />
+    <div class="right desk">
+      <img class="desk" src="../assets/img/Group2.png" alt="" />
     </div>
   </section>
 </template>
@@ -72,4 +72,16 @@
         }
     }
 }
+
+@media screen and (max-width: 1200px) {
+  .desk {
+    display: none !important;
+  }
+  .mobile {
+    width: 100% !important;
+    padding-right: 5%;
+  }
+}
+
+
 </style>

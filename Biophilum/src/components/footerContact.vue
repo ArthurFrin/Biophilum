@@ -15,8 +15,8 @@ import cvDownloadLink from '../assets/cv-frin-philippe.pdf';
             </nav>
             <div>Adresse postale : 124 rue de Belphaget 44150 Saint Géréon</div>
         </div>
-        <div class="right">
-            <img src="../assets/img/Biophilum_white.png" alt="">
+        <div class="right desk">
+            <img class="desk" src="../assets/img/Biophilum_white.png" alt="">
 
         </div>
     </footer>
@@ -62,6 +62,11 @@ import cvDownloadLink from '../assets/cv-frin-philippe.pdf';
             }
         }
     }
+    @media screen and (max-width: 1200px) {
+  .desk {
+    display: none !important;
+  }
+}
 </style>
 
 
