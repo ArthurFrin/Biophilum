@@ -199,7 +199,7 @@ const navigateTo = async (section: string) => {
   display: none;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 800px) {
 
   .toogle {
     background-color: #1d1d1ded;
