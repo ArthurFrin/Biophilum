@@ -63,6 +63,7 @@
         display: flex;
         flex-direction: column;
         width: 50%;
+        max-width: 800px;
 
         p {
             margin: 15px 0;
