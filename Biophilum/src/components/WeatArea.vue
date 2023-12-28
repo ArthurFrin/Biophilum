@@ -36,16 +36,16 @@
     </div>
     <div class="right desk">
       <div class="round-pictures desk">
-        <img src="../assets/img/img1.png" alt="" />
-        <img src="../assets/img/img2.png" alt="" />
-        <img src="../assets/img/img3.png" alt="" />
+        <img draggable="false" src="../assets/img/img1.png" alt="" />
+        <img draggable="false" src="../assets/img/img2.png" alt="" />
+        <img draggable="false" src="../assets/img/img3.png" alt="" />
       </div>
       <div class="round-pictures">
-        <img src="../assets/img/img4.png" alt="" />
-        <img src="../assets/img/img5.png" alt="" />
-        <img src="../assets/img/img6.png" alt="" />
+        <img draggable="false" src="../assets/img/img4.png" alt="" />
+        <img draggable="false" src="../assets/img/img5.png" alt="" />
+        <img draggable="false" src="../assets/img/img6.png" alt="" />
       </div>
-      <img class="schema" src="../assets/img/schema.png" alt="" />
+      <img draggable="false" class="schema" src="../assets/img/schema.png" alt="" />
     </div>
   </section>
 </template>

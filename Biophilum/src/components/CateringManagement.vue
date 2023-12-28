@@ -33,7 +33,7 @@
       </p>
     </div>
     <div class="right desk">
-      <img class="desk" src="../assets/img/Group2.png" alt="" />
+      <img draggable="false" class="desk" src="../assets/img/Group2.png" alt="" />
     </div>
   </section>
 </template>

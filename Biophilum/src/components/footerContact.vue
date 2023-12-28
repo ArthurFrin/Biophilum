@@ -31,7 +31,7 @@ onMounted(() => {
       <div>Adresse postale : 124 rue de Belphaget 44150 Saint Géréon</div>
     </div>
     <div class="right desk">
-      <img class="desk" src="../assets/img/Biophilum_white.png" alt="" />
+      <img draggable="false" class="desk" src="../assets/img/Biophilum_white.png" alt="" />
     </div>
   </footer>
 </template>

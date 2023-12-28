@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <div class="header">
-    <img src="../assets/img/header.png" alt="" />
+    <img draggable="false" src="../assets/img/header.png" alt="" />
   </div>
 </template>
 <style lang="scss" scoped>
