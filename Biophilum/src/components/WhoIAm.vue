@@ -49,7 +49,7 @@ import cvDownloadLink from '../assets/cv-frin-philippe.pdf';
       </div>
     </div>
     <div class="right desk">
-      <img class="plante1 desk" src="../assets/img/plante1.png" alt="" />
+      <img draggable="false" class="plante1 desk" src="../assets/img/plante1.png" alt="" />
     </div>
   </section>
 </template>

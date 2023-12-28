@@ -2,7 +2,7 @@
 <template>
   <section class="flora-fauna" id="flora-fauna">
     <div class="left desk">
-      <img class="bird desk" src="../assets/img/bird.png" alt="" />
+      <img draggable="false" class="bird desk" src="../assets/img/bird.png" alt="" />
     </div>
     <div class="right mobile">
       <h2 class="title">Expertise « faune, flore, habitats</h2>
