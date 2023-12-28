@@ -41,10 +41,10 @@ import cvDownloadLink from '../assets/cv-frin-philippe.pdf';
         </li>
       </ul>
       <div class="adapte">
-        <strong>Biophylum</strong> s’adapte au mieux à vos contraintes, il suffit d’en discuter !
+        <strong>Biophilum</strong> s’adapte au mieux à vos contraintes, il suffit d’en discuter !
       </div>
       <div>
-        <strong>Biophylum</strong> c’est aussi un projet basé sur le partenariat, pour compléter les
+        <strong>Biophilum</strong> c’est aussi un projet basé sur le partenariat, pour compléter les
         compétences, l’analyse et les expériences.
       </div>
     </div>
