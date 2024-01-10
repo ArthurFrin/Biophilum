@@ -5,7 +5,7 @@
       <img draggable="false" class="bird desk" src="../assets/img/bird.png" alt="" />
     </div>
     <div class="right mobile">
-      <h2 class="title">Expertise « faune, flore, habitats</h2>
+      <h1 class="title">Expertise « faune, flore, habitats</h1>
       <div class="div1">
         Biophilum vous propose une expertise « faune, flore, milieux » de qualité permettant
         ’évaluer les écosystèmes afin d’en définir les enjeux de préservation, de restauration et de
