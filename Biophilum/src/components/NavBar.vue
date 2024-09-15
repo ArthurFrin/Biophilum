@@ -18,6 +18,7 @@ const getCurrentSection = (): string | null => {
   const threshold = 50
   const offset = 100
   const sections = [
+    'news',
     'who-i-am',
     'flora-fauna',
     'weat-area',
@@ -91,6 +92,9 @@ const navigateTo = async (section: string) => {
 <template>
   <nav class="nav">
     <ul class="bar">
+      <li :class="{ active: currentSection === 'news' }">
+        <button @click="navigateTo('news')">Les actualités</button>
+      </li>
       <li :class="{ active: currentSection === 'who-i-am' }">
         <button @click="navigateTo('who-i-am')">Qui suis-je?</button>
       </li>
@@ -116,6 +120,9 @@ const navigateTo = async (section: string) => {
       <IconBurger class="icon" />
     </button>
     <ul v-if="showBurger" class="bar2">
+      <li>
+        <button @click="navigateTo('news')">Les actualités</button>
+      </li>
       <li>
         <button @click="navigateTo('who-i-am')">Qui suis-je?</button>
       </li>

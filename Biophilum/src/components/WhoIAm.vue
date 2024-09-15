@@ -9,7 +9,7 @@ import cvDownloadLink from '../assets/cv-frin-philippe.pdf';
       <h2 class="title">Qui suis-je ?</h2>
       <div class="flex div-cv">
         <div class="name">Philippe Frin</div>
-        <div class="inge">Ingénieur Écologues 
+        <div class="inge">Ingénieur Écologue 
           <a :href="cvDownloadLink" download="cv_frin_philippe.pdf" class="cv-link" >(voir CV)</a>
         </div>
       </div>

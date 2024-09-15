@@ -98,6 +98,6 @@
   .mobile {
     width: 100% !important;
     padding-left: 5%;
-  }
+}
 }
 </style>
