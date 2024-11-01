@@ -107,7 +107,7 @@ color: #fff;
 
     .mobile {
       width: 100% !important;
-      padding-right: 5%;
+      padding: 5%;
     }
 
 
