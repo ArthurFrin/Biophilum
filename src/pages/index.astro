@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import NavBar from '../components/NavBar.vue';
+import WhoIAm from '../components/WhoIAm.astro';
+import FloraAndFauna from '../components/FloraAndFauna.astro';
+import WeatArea from '../components/WeatArea.astro';
+import Watershed from '../components/Watershed.astro';
+import CateringManagement from '../components/CateringManagement.astro';
+import FooterContact from '../components/footerContact.astro';
+import News from '../components/News.astro';
+---
+
+<Layout title="Biophilum - Conseil, études et formations en environnement">
+  <Header />
+  <NavBar client:load />
+  <main>
+    <News />
+    <WhoIAm />
+    <FloraAndFauna />
+    <WeatArea />
+    <Watershed />
+    <CateringManagement />
+    <FooterContact />
+  </main>
+</Layout>
