@@ -3,18 +3,78 @@
 import { Image } from 'astro:assets';
 import interrieurImage from '../assets/img/181talus-interrieur2.webp';
 import contactImage from '../assets/img/1330-4(2).webp';
+import bois2 from '../assets/img/bois2.webp'
+import potmon2c from '../assets/img/pot-mon2c.webp'
+import lande_seche from '../assets/img/lande-seche.webp'
 ---
 
 <section class="news" id="news">
+  <div class="left mobile">
+    <h1 class="title">Les actualités</h1><br>
+    <p></p>
+    <h3><strong>Mai à septembre : Inventaire et cartographie de la flore et des
+      habitats naturels et semi-naturels sur les communes de Férel et de
+      Camoël (44</strong>)</h3><br>
+
+    <p>Cette mission s’inscrit dans le cadre du Contrat Nature « Continuités
+      écologiques » mené par Cap Atlantique La Baule-Guérande Agglo. Ce
+      contrat Nature permet l’élaboration des ABC sur les communes de Férel et
+      Camoël.</p><br>
+
+    <p><u>Les objectifs de l’étude sont</u> :</p>
+    <ul>
+      <li> mettre en évidence et cartographier la présence d’habitats d’intérêt
+        communautaire sur le territoire des communes de Camoël et Férel,</li>
+      <li> identifier des secteurs à enjeux liés aux trames écologiques.</li>
+    </ul><br>
+
+    <p>La superficie communale est de 1433 ha pour Camoël et 2890 ha pour
+      Férel. <br>
+      Sur la commune de Férel, <strong>54 habitats</strong> ont été identifiés et
+      cartographiés. <br>
+      La commune de Férel présente une <strong>superficie d’habitats
+      d’intérêt patrimonial de 285 ha</strong> soit 68 % de la zone étudiée. <br>
+      93
+      relevés phytosociologiques ont été réalisés sur la commune.</p><br>
+
+    <p>Sur la commune de Camoël, <strong>64 habitats</strong> ont été identifiés et
+      cartographiés. <br>
+      La commune de Camoël présente une <strong>superficie d’habitats
+      d’intérêt patrimonial de 182 ha</strong> soit 71% de la zone étudiée. <br>
+      39 relevés
+      phytosociologiques ont été réalisés sur la commune.</p><br>
+
+    <p>Au total ce sont <strong>54 stations d’espèces patrimoniales</strong> concernant 20
+      espèces qui ont été caractérisée et 35 stations d’espèces à caractère
+      invasif concernant 12 espèces.</p>
+  </div>
+  <div1 class="desk">
+    <figure>
+      <Image src={bois2} alt="bois">
+    </figure>
+    <figure>
+      <Image src={potmon2c}  alt="fleur"> 
+    </figure>
+    <figure>
+      <Image src={lande_seche} alt="lande seche">
+    </figure>
+  </div1>
+</section>
+
+<section class="news2" id="news2">
   <div class="right mobile">
     <h3 class="title">Mars-Juin 2024 : Évaluation de l’impact des travaux du LIFE Sallina sur les prés salés des
       marais salants de Guérande et du Mès.</h3>
     <p>L’objectif de l’étude est d’évaluer l’impact des travaux (débroussaillage ou bûcheronnage de
-      fourrés de ligneux, arrachage de Baccharis halimifolia, pâturage ovin, …) réalisés dans le cadre du LIFE Sallina sur les prés salés atlantiques (code UE : 1330) au sein de 19 sites pilotes.
+      fourrés de ligneux, arrachage de Baccharis halimifolia, pâturage ovin, …) réalisés dans le cadre du LIFE Sallina
+      sur les prés salés atlantiques (code UE : 1330) au sein de 19 sites pilotes.
     </p>
-    <p1>La zone d’étude correspond aux linéaires de talus des sites restaurés sur la commune de Pénestin, sur le Bassin de Guérande (communes de Guérande, du Pouliguen et de la Turballe) et sur le Bassin du Mès (communes de Saint-Molf et de Mesquer-Quimiac).
+    <p1>La zone d’étude correspond aux linéaires de talus des sites restaurés sur la commune de Pénestin, sur le
+      Bassin de Guérande (communes de Guérande, du Pouliguen et de la Turballe) et sur le Bassin du Mès (communes de
+      Saint-Molf et de Mesquer-Quimiac).
     </p1>
-    <p1>L’étude porte sur les prés salés atlantiques du Glauco-Puccinellietalia maritimae (code 1330), ces habitats regroupent l’ensemble des végétations pérennes des prés salés atlantiques, se développant au niveau du schorre.
+    <p1>L’étude porte sur les prés salés atlantiques du Glauco-Puccinellietalia maritimae (code 1330), ces habitats
+      regroupent l’ensemble des végétations pérennes des prés salés atlantiques, se développant au niveau du schorre.
     </p1>
   </div>
   <div class="pictures desk">
@@ -25,13 +85,55 @@ import contactImage from '../assets/img/1330-4(2).webp';
     <figure>
       <Image draggable="false" src={contactImage} alt="Habitat des prés salés du contact haut schorre/dune" />
       <figcaption>Habitat des prés salés du contact haut schorre/dune</figcaption>
-    </figure> 
-    
+    </figure>
   </div>
 </section>
 
 <style lang="scss" scoped>
 .news {
+background-color: #fff;
+display: flex;
+justify-content: flex-start;
+padding: 80px 5% 40px;
+
+figure{
+  display: flex;
+  align-items: center;
+  }
+figure:nth-child(1) {
+  flex-direction: row;
+  transform: translate(0px, 50px);
+}
+
+figure:nth-child(2) {
+  flex-direction: row;
+  transform: translate(0px, 300px);
+}
+
+  figure:nth-child(3) {
+  flex-direction: row;
+  transform: translate(180px, -300px);
+}
+
+img {
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+width: 400px;
+height: auto;
+/* Taille maximale pour les rendre plus petites */
+margin-left: 50px;
+border-radius:50px;
+position: relative;
+border:2px solid #008037;
+}
+
+}
+
+.left {
+max-width: 600px;
+}
+.news2 {
 display: flex;
 padding: 80px 5% 40px 0;
 justify-content: flex-end;
@@ -46,73 +148,84 @@ color: #fff;
   display: flex;
   flex-direction: column;
   width: 40%;
-  
+
   p {
     margin: 15px 0;
   }
 
   p1 {
-    margin:5px 0;
+    margin: 5px 0;
   }
 
   .green {
     color: #008037;
   }
-  }
+}
 
 .pictures {
-display: flex;
-flex-direction:column;
-align-items: flex-start;
-justify-content:flex-start;
-width: 52%;
-position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 52%;
+  position: relative;
 
-figure{
-  display: flex; /* Disposition en ligne pour aligner image et légende */
-  align-items:center; /* Aligne verticalement l'image et la légende */
+  figure {
+    display: flex;
+    /* Disposition en ligne pour aligner image et légende */
+    align-items: center;
+    /* Aligne verticalement l'image et la légende */
 
 
-  img {
-    max-width: 400px; /* Taille maximale pour les rendre plus petites */
-    height: auto;
-    margin-bottom: 50px; /* Espace entre les images vertical*/
-    border-radius: 50px;
-    position: relative;
+    img {
+      max-width: 400px;
+      /* Taille maximale pour les rendre plus petites */
+      margin-bottom: 50px;
+      /* Espace entre les images vertical*/
+      border-radius: 50px;
+      position: relative;
+      border:2px solid #fff; 
+      height: auto;
+    }
+
+    figcaption {
+      margin-top: -50px;
+      color: #fff;
+    }
   }
-  
-  figcaption {
-    margin-top: -50px;
-    color: #fff;
+
+  figure:nth-child(1) {
+    flex-direction: row;
+    transform: translate(-70px, 0px);
+
+    figcaption {
+      margin-left: 20px;
+      /* Ajoute de l'espace entre l'image et la légende */
+    }
   }
-}
-figure:nth-child(1){
-  flex-direction: row;
-  transform: translate(-70px, 0px);
-  figcaption {
-    margin-left: 20px; /* Ajoute de l'espace entre l'image et la légende */
+
+  figure:nth-child(2) {
+    flex-direction: row-reverse;
+    transform: translate(-40px, 0px);
+
+    figcaption {
+      margin-right: 20px;
+      /* Ajoute de l'espace entre l'image et la légende */
+    }
   }
-}
-figure:nth-child(2){
-  flex-direction: row-reverse;
-  transform: translate(-40px, 0px);
-  figcaption {
-    margin-right:20px; /* Ajoute de l'espace entre l'image et la légende */
-  }
-}
 
 }
 }
 
 @media screen and (max-width: 1200px) {
-  .desk {
-    display: none !important;
-  }
+.desk {
+  display: none !important;
+}
 
-  .mobile {
-    width: 100% !important;
-    padding: 5%;
-  }
+.mobile {
+  width: 100% !important;
+  padding: 5%;
+}
 
 
 }
