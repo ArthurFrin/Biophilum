@@ -1,0 +1,30 @@
+---
+// Header.astro - Composant d'en-tête simple avec image
+import { Image } from 'astro:assets';
+import headerImage from '../assets/img/header.webp';
+---
+
+<div class="header">
+  <Image src={headerImage} alt="Header Biophilum" draggable="false" loading="eager" />
+</div>
+
+<style lang="scss">
+.header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .header {
+    height: auto;
+  }
+}
+</style>

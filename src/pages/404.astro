@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import logoWhite from '../assets/img/Biophilum_white.webp';
+import FooterContact from '../components/footerContact.astro';
+---
+
+<Layout title="404 - Page non trouvée | Biophilum">
+    <div class="error-container">
+        <div class="error-content">
+            <Image src={logoWhite} alt="Logo Biophilum" class="logo" width={300} height={150} />
+            <h1>404</h1>
+            <h2>Page non trouvée</h2>
+            <p>La page que vous recherchez n'existe pas ou a été déplacée.</p>
+            <a href="/" class="back-button">Retour à l'accueil</a>
+        </div>
+    </div>
+</Layout>
+
+<style lang="scss">
+    .error-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        text-align: center;
+        padding: 2rem;
+        background-color: #1d1d1d;
+        color: #fff;
+        
+        .error-content {
+            max-width: 600px;
+            
+            .logo {
+                margin-bottom: 2rem;
+                width: 100%;
+                max-width: 300px;
+                height: auto;
+            }
+            
+            h1 {
+                font-size: 6rem;
+                margin: 0;
+                color: #4caf50;
+            }
+            
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+            
+            p {
+                margin-bottom: 2rem;
+                font-size: 1.2rem;
+            }
+            
+            .back-button {
+                display: inline-block;
+                background-color: #4caf50;
+                color: white;
+                padding: 12px 24px;
+                text-decoration: none;
+                border-radius: 4px;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+                
+                &:hover {
+                    background-color: #367c39;
+                }
+            }
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .error-container {
+            .error-content {
+                h1 {
+                    font-size: 4rem;
+                }
+                
+                h2 {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+</style>

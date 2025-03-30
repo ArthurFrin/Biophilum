@@ -1,0 +1,121 @@
+---
+// WeatArea.astro - Composant d'expertise zones humides
+import { Image } from 'astro:assets';
+import img1 from '../assets/img/img1.webp';
+import img2 from '../assets/img/img2.webp';
+import img3 from '../assets/img/img3.webp';
+import img4 from '../assets/img/img4.webp';
+import img5 from '../assets/img/img5.webp';
+import img6 from '../assets/img/img6.webp';
+import schemaImage from '../assets/img/schema.webp';
+---
+
+<section id="weat-area">
+  <div class="left mobile">
+    <h3 class="title">Expertise zones humides</h3>
+    <p>
+      L'identification des zones humides est réalisée sur la base des critères floristiques
+      (végétation et habitats) et des critères pédologiques, conformément à l'arrêté du 24 juin
+      2008 modifié par l'arrêté du 1er octobre 2009.
+    </p>
+    <p>
+      L'identification des types de sols est basée sur les « Classes d'hydromorphie du Groupe
+      d'Etude des Problèmes de Pédologie Appliquée modifié (GEPPA, 1981) », définies par l'arrêté
+      du 1er octobre 2009 (cf. schéma ci-dessous).
+    </p>
+    <p>
+      Biophilum bénéficie d'une grande expérience dans l'identification et la caractérisation des
+      zones humides. Depuis 2001, j'ai été amené à réaliser des inventaires « zones humides » sur
+      de nombreux SAGE : Blavet, Vilaine, Estuaire de la Loire, Grand-lieu,Sèvre Nantaise et Haut
+      Val de Sèvre. Ces délimitations et caractérisations ont été menées dans des contextes
+      multiples et parfois complexes. Certains sols peuvent prêter à confusion notamment les sols
+      d'altération sur schistes parfois classés à tort en zones humides !
+    </p>
+    <p>
+      Une attention particulière doit aussi être portée sur la caractérisation de la végétation
+      des plans d'eau. Tous ne sont pas à classer en zones humides, la présence d'herbiers
+      aquatiques enracinés est nécessaire pour leur caractérisation en zone humide.
+    </p>
+    <p>
+      Ces milieux particuliers ont des fonctions multiples : régulation hydraulique, épuration,
+      biodiversité, …  qu'il convient de caractériser et d'évaluer. Biophilum propose des méthodes
+      d'évaluation de ces fonctions à différentes échelles : parcelle, sous-bassin- versant,
+      bassin-versant, masse d'eau.
+    </p>
+  </div>
+  <div class="right desk">
+    <div class="round-pictures desk">
+      <Image draggable="false" src={img1} alt="Image zone humide 1" />
+      <Image draggable="false" src={img2} alt="Image zone humide 2" />
+      <Image draggable="false" src={img3} alt="Image zone humide 3" />
+    </div>
+    <div class="round-pictures">
+      <Image draggable="false" src={img4} alt="Image zone humide 4" />
+      <Image draggable="false" src={img5} alt="Image zone humide 5" />
+      <Image draggable="false" src={img6} alt="Image zone humide 6" />
+    </div>
+    <Image draggable="false" class="schema" src={schemaImage} alt="Schéma explicatif" />
+  </div>
+</section>
+
+<style lang="scss">
+section {
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+  padding-left: 5%;
+
+  .left {
+    margin-top: 80px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+
+    p {
+        margin: 15px 0;
+    }
+    .green {
+        color: #008037;
+    }
+  }
+  .right {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+
+
+    .round-pictures {
+        display: flex;
+
+      img {
+        width: 180px;
+        height: auto;
+        border: solid 3px #008037;
+        border-radius: 99999px;
+        margin: 3px;
+      }
+    }
+    .schema {
+        position: relative;
+        margin-top: 100px;
+        margin-left: -50px;
+        width: 630px;
+        margin-bottom: 80px;
+    }
+  }
+
+  @media screen and (max-width: 1200px) {
+    .desk {
+      display: none !important;
+    }
+    .mobile {
+      width: 100% !important;
+      padding-right: 5%;
+    }
+  }
+}
+</style>

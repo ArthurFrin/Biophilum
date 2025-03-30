@@ -1,0 +1,89 @@
+---
+// CateringManagement.astro - Composant de gestion, restauration, renaturation
+import { Image } from 'astro:assets';
+import group2Image from '../assets/img/Group2.webp';
+---
+
+<section class="catering-management mobile" id="catering-management">
+  <div class="left mobile">
+    <h3 class="title">Gestion, restauration, renaturation</h3>
+    <p class="p">
+      <strong>Biophilum</strong> vous <strong>accompagne</strong> dans vos
+      <strong>projets de gestion</strong>, de <strong>restauration</strong> de milieux naturels et
+      de <strong>renaturation</strong> de milieux anthropisés.
+    </p>
+    <p class="p">
+      <strong>Engager ensemble</strong> une réflexion, sur l'état de connaissance des milieux afin
+      d'établir un <strong>état de référence solide</strong> pour conduire l'identification des
+      enjeux du site.
+    </p>
+    <ul class="p">
+      <li>
+        <strong>Définir, en concertation, les objectifs</strong> à atteindre et les
+        <strong>actions à mettre en oeuvre</strong> pour y arriver.
+      </li>
+      <li>Programmer et chiffrer les opérations du plan.</li>
+      <li>Définir les indicateurs et les protocoles de suivis.</li>
+      <li>
+        <strong>Biophilum</strong> réalise
+        <strong>les dossiers de consultation des entreprises</strong> (DCE), les
+        <strong>plans côtés</strong> des aménagements et les
+        <strong>suivis des chantiers</strong> (réunions de chantier, encadrement des travaux).
+      </li>
+    </ul>
+    <p class="p">
+      <strong>Biophilum vous accompagne dans la communication de vos projets</strong> pour une meilleure compréhension et adhésion des acteurs du territoire et des riverains (réalisation de panneaux de sensibilisation, animation de réunions de sensibilisation, …).
+    </p>
+  </div>
+  <div class="right desk">
+    <Image draggable="false" class="desk" src={group2Image} alt="Image de restauration" />
+  </div>
+</section>
+
+<style lang="scss">
+.catering-management {
+    display: flex;
+    background-color: #fff;
+    padding: 0 0 0 5%;
+
+    .right {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        padding-bottom: 80px;
+
+        img {
+            width: 500px;
+            height: auto;
+        }
+    }
+    .left {
+        margin-top: 80px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        max-width: 800px;
+
+        p {
+            margin: 15px 0;
+        }
+        .green {
+            color: #008037;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+  .desk {
+    display: none !important;
+  }
+  .mobile {
+    width: 100% !important;
+    padding-right: 5%;
+  }
+}
+</style>
